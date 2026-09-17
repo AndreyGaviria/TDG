@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Main from './pages/main/Main';
+import PanelProyecto from './pages/PanelProyecto/PanelProyecto';
+
 function App() {
   return (
     <BrowserRouter>
@@ -8,6 +10,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='main' element={<Main />}/>
+          <Route path='proyectos' element={<PanelProyecto />}/>
         </Routes>
       </div>
     </BrowserRouter>

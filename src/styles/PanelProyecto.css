@@ -1,0 +1,209 @@
+/* ===== Variables ===== */
+.panel-layout {
+  --color-navy: #14104a;
+  --color-header-dark: #2b0505;
+  --color-red-sidebar: #a10a0a;
+  --color-red-sidebar-item: #8a0808;
+  --color-red-btn: #ff4d4d;
+  --color-red-btn-hover: #ff6666;
+  --color-bg-content: #efefef;
+  --color-white: #ffffff;
+  --color-text-dark: #1a1a1a;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-navy);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Header ===== */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: linear-gradient(180deg, #3a0808 0%, #200404 100%);
+  border-bottom: 3px solid var(--color-navy);
+}
+
+.panel-logo-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background: #200404;
+}
+
+.panel-logo-text {
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.panel-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #8fa9c2;
+}
+
+/* ===== Body layout ===== */
+.panel-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== Sidebar ===== */
+.panel-sidebar {
+  width: 220px;
+  background: var(--color-red-sidebar);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-sidebar-item {
+  padding: 20px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  color: var(--color-text-dark);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.panel-sidebar-item:hover {
+  background: var(--color-red-sidebar-item);
+}
+
+/* ===== Content ===== */
+.panel-content {
+  flex: 1;
+  background: var(--color-bg-content);
+  padding: 24px 32px 40px;
+}
+
+.panel-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin: 8px 0 24px;
+}
+
+/* ===== Grid ===== */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+}
+
+.panel-card {
+  background: var(--color-white);
+  border-radius: 4px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.panel-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 0 0 16px;
+}
+
+.panel-card-body {
+  min-height: 120px;
+}
+
+.panel-card--proyectos {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.panel-card--acciones {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.panel-card--asignaciones {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.panel-card--equipo {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.panel-card--horas {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+/* ===== Botones de acción ===== */
+.panel-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.panel-action-btn {
+  flex: 1;
+  min-width: 160px;
+  padding: 16px 20px;
+  background: var(--color-red-btn);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.panel-action-btn:hover {
+  background: var(--color-red-btn-hover);
+}
+
+.panel-action-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .panel-body {
+    flex-direction: column;
+  }
+
+  .panel-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .panel-sidebar-item {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-card--proyectos,
+  .panel-card--acciones,
+  .panel-card--asignaciones,
+  .panel-card--equipo,
+  .panel-card--horas {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}

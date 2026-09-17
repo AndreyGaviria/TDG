@@ -1,10 +1,23 @@
-const Home = () => {
-    return (
-        <div className="container">
-            <h1>HOLA MUNDO</h1>
-            <a href="/main">Iniciar</a>
-        </div>
-    )
-}
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../../styles/Home.css";
 
-export default Home;
+export default function Home() {
+  const navigate = useNavigate();
+
+  const handleIniciarSesion = () => {
+    navigate("/proyectos");
+  };
+
+  return (
+    <div>
+      <button
+        type="button"
+        className="btn-iniciar-sesion"
+        onClick={handleIniciarSesion}
+      >
+        Iniciar sesión
+      </button>
+    </div>
+  );
+}

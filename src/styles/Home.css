@@ -1,0 +1,19 @@
+.btn-iniciar-sesion {
+  padding: 12px 28px;
+  background-color: #a10a0a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn-iniciar-sesion:hover {
+  background-color: #c40d0d;
+}
+
+.btn-iniciar-sesion:active {
+  transform: scale(0.97);
+}
